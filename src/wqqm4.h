@@ -1,0 +1,43 @@
+#ifndef __WQQ_M4_H__
+#define __WQQ_M4_H__
+
+#define WQQ_WCHAT	"qchat"
+
+#ifndef WQQ_DATA_DIR
+#define WQQ_DATA_DIR	PACKAGE_DATA_DIR
+#endif
+
+#define WQQ_DATA_CSS_DIR	WQQ_DATA_DIR "/css"
+#define WQQ_DATA_STATUS_DIR	WQQ_DATA_DIR "/status"
+#define WQQ_DATA_FACE_DIR	WQQ_DATA_DIR "/face"
+#define WQQ_DATA_ICON_DIR	WQQ_DATA_DIR "/icons"
+
+#define WQQ_DATA_CSS_QQCHAT_FILE WQQ_DATA_CSS_DIR "/qqchat.css"
+#define WQQ_DATA_CSS_CHAT_FILE	WQQ_DATA_CSS_DIR "/chat.css"
+
+#define WQQ_DATA_WCHAT_ICON_FILE	WQQ_DATA_ICON_DIR "/wchat.png"
+#define WQQ_DATA_FRIEND_ICON_FILE	WQQ_DATA_ICON_DIR "/stock_friend.svg"
+#define WQQ_DATA_GROUP_ICON_FILE	WQQ_DATA_ICON_DIR "/stock_group.svg"
+#define WQQ_DATA_CHAT_ICON_FILE		WQQ_DATA_ICON_DIR "/stock_chat.png"
+#define WQQ_DATA_LOGINING_GIF_FILE	WQQ_DATA_DIR	"/logining.gif"
+
+#define WQQ_DATA_ACCOUNTS_FILE_NAME	"accounts"
+
+#define WQQ_DATA_FACE_DEFAULT_FILE	WQQ_DATA_FACE_DIR	"/default_face"
+#define WQQ_DATA_GROUP_FACE_DEFAULT_FILE	WQQ_DATA_FACE_DIR "/default_group_face"
+
+#define WQQ_DATA_LOGIN_CSS_FILE	WQQ_DATA_CSS_DIR "/login.css"
+#define WQQ_DATA_LOGINING_CSS_FILE	WQQ_DATA_CSS_DIR "/logining.css"
+#define WQQ_DATA_STATUS_ONLINE_FILE	WQQ_DATA_STATUS_DIR "/online.png"
+#define WQQ_DATA_STATUS_OFFLINE_FILE	WQQ_DATA_STATUS_DIR	"/offline.png"
+#define WQQ_DATA_STATUS_BUSY_FILE	WQQ_DATA_STATUS_DIR "/busy.png"
+#define WQQ_DATA_STATUS_AWAY_FILE	WQQ_DATA_STATUS_DIR	"/away.png"
+#define WQQ_DATA_STATUS_SILENT_FILE	WQQ_DATA_STATUS_DIR	"/silent.png"
+#define WQQ_DATA_STATUS_HIDDEN_FILE	WQQ_DATA_STATUS_DIR	"/hidden.png"
+#define WQQ_DATA_STATUS_CALLME_FILE	WQQ_DATA_STATUS_DIR	"/callme.png"
+
+
+#define WQQ_SECRET_SCHEMA_NAME	"org.app.wchat"
+#define WQQ_SECRET_SCHEMA_ATTRIBUTE_NAME	"qqid"
+
+#endif

@@ -1,0 +1,40 @@
+#=============================================================================
+#     FileName: get_user_sign
+#         Desc: 获取好友签名
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-23 14:25:38
+#      History:
+#=============================================================================
+
+
+#目标服务器
+http://s.web2.qq.com
+
+#http请求头
+#tuin就是用户的uin,
+#vfwebqq就是一直随登录状态而存在的那个vfwebqq
+#t是从时间的秒数
+GET /api/get_single_long_nick2?tuin=570722992&vfwebqq=17db99bd3dc4b3c246dfb4716f2c6adf8921d8d989f2ef7eae162e7b131df149c94612547de327b6&t=1379917492711 HTTP/1.1
+Host: s.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: utf-8
+Referer: http://s.web2.qq.com/proxy.html?v=20110412001&callback=1&id=3
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=pDra5dv6tM; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; pgv_info=pgvReferrer=&ssid=s8321207718; ptisp=edu; uin=o0570722992; skey=@R6f4Q3mcb; ptwebqq=c57a1a31f2e16e4ddd29f3ead26815282c0730ab9ee08c2877082d12b5ff66e7; p_uin=o0570722992; p_skey=-CqRP6pBOIQkwxTrlHizI7YaqKVPrJupheRqtf0MvlQ_; pt4_token=3KZ3sSAyaO-c1LSrm*5-nA__
+Connection: keep-alive
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 23 Sep 2013 06:24:53 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 104
+Connection: keep-alive
+#http响应正文
+{"retcode":0,"result":[{"uin":570722992,"lnick":"然后王子和公主就幸福地生活在了一起"}]}

@@ -1,0 +1,41 @@
+#=============================================================================
+#     FileName: check_verify
+#         Desc: 验证是否需要验证码
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-18 15:59:30
+#      History:
+#=============================================================================
+#
+
+#目标服务器
+https://ssl.ptlogin2.qq.com/
+
+#http请求头
+#uin 用户帐号
+#appid 固定值1003903
+GET /check?uin=57072292&appid=1003903 HTTP/1.1
+Host: ssl.ptlogin2.qq.com
+Accept: */*
+
+#http响应头
+#ptvfsession 表示特定会话的字段,须记住,在后续登录过程中使用
+#ptisp 记住该字段#TODO
+#TODO
+HTTP/1.1 200 OK
+Server: nginx/1.2.7
+Date: Sun, 15 Sep 2013 05:41:58 GMT
+Content-Type: application/x-javascript; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Pragma: No-cache
+P3P: CP="CAO PSA OUR"
+Set-Cookie: confirmuin=0; PATH=/; DOMAIN=ptlogin2.qq.com;
+Set-Cookie: ptisp=edu; PATH=/; DOMAIN=qq.com;
+#http响应正文
+#第一个字段 0表示不需要验证码,1表示需要验证码
+#第二个字段 验证码
+#第三个字段 uin用于登录时加密用
+ptui_checkVC('1','5376235cb4b439c578fd9a4ce5ec86ea0dfb1b93fd70f245','\x00\x00\x00\x00\x22\x04\x8a\xb0');

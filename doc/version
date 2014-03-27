@@ -1,0 +1,33 @@
+#=============================================================================
+#     FileName: version
+#         Desc: 获取webqq版本号(貌似可有可无)
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-18 16:00:35
+#      History:
+#=============================================================================
+#
+
+#目标服务器
+http://ui.ptlogin2.qq.com
+
+#http请求头
+GET /cgi-bin/ver HTTP/1.1
+Host: ui.ptlogin2.qq.com
+Accept: */*
+Connection: Close	#
+
+#http响应头
+HTTP/1.1 200 OK
+Connection: close
+Server: QZHTTP-2.12
+Date: Fri, 13 Sep 2013 01:18:32 GMT
+UUID: 0
+Content-Length: 22
+Pragma: no-cache
+Cache-Control: no-cache; must-revalidate
+Content-Type: application/x-javascript; charset=gb2312
+#http响应正文
+ptuiV(201309110930);	#这个201309110930即为版本号

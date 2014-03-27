@@ -1,0 +1,38 @@
+#=============================================================================
+#     FileName: get_friend_account
+#         Desc: 获取用户qq号码
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2014-02-03 13:53:17
+#      History:
+#=============================================================================
+#
+
+#目标服务器
+http://s.web2.qq.com
+
+#http请求头
+GET /api/get_friend_uin2?tuin=2153954204&verifysession=&type=1&code=&vfwebqq=92888de000858d882802b690bdcc3117decf8793c128eb728e134526bcca94478b769bc97d72db77&t=1391425217546 HTTP/1.1
+Host: s.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:26.0) Gecko/20100101 Firefox/26.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: utf-8
+Referer: http://s.web2.qq.com/proxy.html?v=20110412001&callback=1&id=3
+Cookie: pgv_pvid=9169576686; ptui_loginuin=2997115575; pt2gguin=o2997115575; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; o_cookie=570722992; ts_uid=6163956548; pgv_pvi=1944736768; RK=BLvSofvx+M; luin=o0570722992; lskey=000100002e61b1efd765ae2cb17bedcfb8fef4cd45d6a288fd505992f20eaa883f6702b09e07822383865999; subDay_1=2; pgv_info=ssid=s1049242004&pgvReferrer=; ts_last=web2.qq.com/; ptisp=; uin=o2997115575; skey=@iwBiIStm9; ptwebqq=cc3b4e7894944e6f3b2bd25bde22992ee4b59eefdcb2264a0a4adfc3e4017083; p_uin=o2997115575; p_skey=ZqB84Wwk6xiQpLZZEioU*FNHaGPhWvebY8K925zmEz8_; pt4_token=f-uM2L6joxL4HTlzt4y09w__
+Connection: keep-alive
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 03 Feb 2014 11:00:17 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 72
+Connection: keep-alive
+
+#http响应正文
+{"retcode":0,"result":{"uiuin":"","account":570722992,"uin":2153954204}}

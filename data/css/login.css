@@ -1,0 +1,50 @@
+* {
+	-GtkWidget-link-color : grey;
+	-GtkWidget-visited-link-color : grey ;
+}
+
+GtkComboBox#username_combo GtkButton {
+	border-radius : 0px 10px 10px 0px;
+}
+GtkComboBox#username_combo GtkEntry {
+	border-radius : 10px 0px 0px 10px;
+}
+GtkComboBox#status_combo GtkButton{
+	border-width : 0px;
+	border-radius : 10px;
+}
+GtkComboBox#status_combo GtkMenu{
+	border-radius : 10px;
+}
+
+GtkEntry {
+	border-radius : 10px;
+	font : ubuntu mono bold 15;
+}
+
+GtkLabel#login_label {
+	font : ubuntu mono Italic bold 20;
+}
+
+GtkLabel#link_label {
+	font : ubuntu 9;
+}
+
+GtkCheckButton {
+	color : grey;
+	border-radius : 8px;
+	transition: 1500ms ease-in-out;
+}
+
+GtkCheckButton:active {
+	color : #111111;
+}
+
+GtkButton#login_button { 
+	border-radius : 25px;
+	border-width : 1.5px 1.5px 1px 1px;
+}
+
+GtkButton#login_button GtkLabel {
+	font : ubuntu bold 13;
+}

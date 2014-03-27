@@ -1,0 +1,43 @@
+#=============================================================================
+#     FileName: send_group_msg
+#         Desc: 发送群消息
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-29 08:36:47
+#      History:
+#=============================================================================*/
+
+#目标服务器
+http://d.web2.qq.com
+
+#http请求头
+POST: /channel/send_qun_msg2 HTTP/1.1
+Host: d.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: https://d.web2.qq.com/cfproxy.html?v=20110331002&callback=1
+Content-Length: 869
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=pDra5dv6tM; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; o_cookie=570722992; pgv_pvi=5767573504; c_sub_id1=1; subDay_1=28; verifysession=h020XqRowEZcFZMCyf8-qySz9QD65ZkVhYhLThZMnzgbRtOOofKTRLO7bc0TKpbQacE2ZsDHfLvdZZ7-IlAreBvNA**; ptisp=edu; uin=o0570722992; skey=@Uhi5g2Rhy; ptwebqq=eb4e707e4019e60631481f250487cb47469ceccae08ad248ee32534fc6b9740b; pgv_si=s6237456384; pgv_info=pgvReferrer=&ssid=s5739380528; p_uin=o0570722992; p_skey=3Y8h0MM9KSqeWr44W1-WGyzkIAm4RnydKOVduEN4w94_; pt4_token=0xsJdwXU6cYAEBUSd7gSSw__
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+#http请求正文(POST数据)
+#和发送好友消息的差不多
+r={"group_uin":445471505,"content":"[\"buhui\\n\",[\"font\",{\"name\":\"é»ä½\",\"size\":\"11\",\"style\":[0,0,0],\"color\":\"000000\"}]]","msg_id":49370009,"clientid":"92937144","psessionid":"8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e3230320000771c00000df3036e0400b08a04226d0000000a405568693567325268796d00000028a01e8f252fcc2350c7f2f48256ccd1076267fe649b03f84c6a83cc4768e6a459d0ae0e5229c08029"}&clientid=92937144&psessionid=8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e3230320000771c00000df3036e0400b08a04226d0000000a405568693567325268796d00000028a01e8f252fcc2350c7f2f48256ccd1076267fe649b03f84c6a83cc4768e6a459d0ae0e5229c08029
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 29 Sep 2013 01:55:48 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Content-Length: 29
+Cache-Control: no-cache
+#http响应正文
+{"retcode":0,"result":"ok"}

@@ -1,0 +1,22 @@
+#
+# 获取用户头像
+#
+
+
+#目标服务器
+http://face[12345678].web.qq.com
+#http请求头
+#uin为目标用户的uin
+#vfwebqq
+GET /cgi/svr/face/getface?cache=0&type=14&fid=0&uin=509878784&vfwebqq=5b4896ca7669bdee8a4721312411a844bbc0c9548b87186f9d1c5a7e7dcdaa975da3b1184f3e3555 HTTP/1.1
+Host: face1.web.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:26.0) Gecko/20100101 Firefox/26.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: http://web2.qq.com/webqq.html
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992@qq.com; pt2gguin=o0570722992; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; o_cookie=570722992; pgv_pvi=1944736768; RK=BLvSofvx+M; c_sub_id1=1; subDay_1=17; pgv_info=pgvReferrer=&ssid=s4508889770; ptisp=; uin=o0570722992; skey=@kvICf0cUV; ptwebqq=86b83b779134b9cc334251e2108ce7654ffa000ba89602fd65067fe0a650a22e
+Connection: keep-alive
+
+#http响应就是用户头像

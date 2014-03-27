@@ -1,0 +1,54 @@
+#=============================================================================
+#     FileName: poll_msg
+#         Desc: 向服务器轮询消息
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-28 10:27:10
+#      History:
+#=============================================================================*/
+
+#目标服务器
+http://d.web2.qq.com
+
+#http请求头
+POST /channel/poll2 HTTP/1.1
+Host: d.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: https://d.web2.qq.com/cfproxy.html?v=20110331002&callback=1
+Content-Length: 597
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=pDra5dv6tM; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; o_cookie=2037369293; verifysession=h02uxogEalC-Nmv3q9PS5WsVgIBiVDCNI4SYrr4oVFVzD3p5VI7wqHp5fay_S1O_Xiim1pvYJrIGbXGtQGzJ2kTAg**; pgv_info=pgvReferrer=&ssid=s5739380528; ptisp=edu; uin=o0570722992; skey=@NimpwvuFi; p_uin=o0570722992; p_skey=raoRwXVv0DIRolsG2mAEHHsHKBByqfpESrvQR*8NPXY_; pt4_token=Z5a3vrfamPY0O5cdm6-TsQ__; ptwebqq=fbe9082a52ad3e29e78e2f374acea2e604f8d5b53c8e83aaea6b1138af38f438
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+
+#htpp请求正文(POST数据)
+#clientid和psessionid不用多说
+#key为0,idx为[],不知道具体作用 FIXME
+r={"clientid":"14418339","psessionid":"8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e32303200005cd600000d9d036e0400b08a04226d0000000a404e696d7077767546696d000000283298504917f1d2d597a21c5c9984871f71eb34d1d1269bc2b619ba5d10f3769155679f2df140ca6a","key":0,"ids":["45975"]}&clientid=14418339&psessionid=8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e32303200005cd600000d9d036e0400b08a04226d0000000a404e696d7077767546696d000000283298504917f1d2d597a21c5c9984871f71eb34d1d1269bc2b619ba5d10f3769155679f2df140ca6a
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 28 Sep 2013 02:12:01 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Content-Length: 307
+Cache-Control: no-cache
+
+#http响应正文
+#如果没有消息,不会有任何数据返回,连接会超时
+#retcode为0时有消息，非0值的意义暂时未知 FIXME
+#每次可以有多种类型数据返回(好友消息、群消息、好友在线状态改变等),每种类型可以有多条消息,这也是为什么json结构中采用数组的原因
+#第一种好友消息,poll_type为message
+{"retcode":0,"result":[{"poll_type":"message","value":{"msg_id":45975,"from_uin":2310902273,"to_uin":570722992,"msg_id2":613080,"msg_type":9,"reply_ip":176886368,"time":1380334320,"content":[["font",{"size":12,"color":"000000","style":[0,0,0],"name":"\u5E7C\u5706"}],"hello world!40\n",["face",1]," "]}}]}
+#第二种群消息,poll_type为group_message
+{"retcode":0,"result":[{"poll_type":"group_message","value":{"msg_id":1515,"from_uin":199847940,"to_uin":570722992,"msg_id2":232308,"msg_type":43,"reply_ip":176489086,"group_code":2965674327,"send_uin":2310902273,"seq":14692,"time":1380335189,"info_seq":111842768,"content":[["font",{"size":10,"color":"000000","style":[0,0,0],"name":"Verdana"}],"123 "]}}]}
+#第三种好友在线状态改变消息,poll_type为buddies_status_change
+{"retcode":0,"result":[{"poll_type":"buddies_status_change","value":{"uin":1374906590,"status":"away","client_type":1}}]}

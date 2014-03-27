@@ -1,0 +1,47 @@
+#=============================================================================
+#     FileName: get_friends_list
+#         Desc: 获取列表
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-22 12:02:51
+#      History:
+#=============================================================================
+
+#目标服务器
+http://s.web2.qq.com
+
+#http请求头
+POST /api/get_user_friends2 HTTP/1.1
+Host: s.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://s.web2.qq.com/proxy.html?v=20110412001&callback=1&id=3
+Content-Length: 164
+Cookie: pgv_pvid=3543472480; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=9Dqa9dv6vs; ptcz=164b78eb4b703b0a5edd250ae2de686fd33f140efc9f078c0f28866fa48950f5; hideusehttpstips=1; o_cookie=570722992; pgv_pvi=6503170048; subDay_1=19; pgv_info=pgvReferrer=&ssid=s6117156000; ptisp=edu; verifysession=h023UrKfBIiZNOOE3TYWUdcXGTl7iI3wHqOuKIL5yKQrA8FLdq_-Oy6H05bchObSbamB6HwVM7G_6ww1n3ewY69Bw**; uin=o0570722992; skey=@AXdnhtnQc; ptwebqq=40f8074e17e5156a0cc5cd630062417b9badf5c6da5a8a0cf7ed849b7409539b; p_uin=o0570722992; p_skey=qXsSsCnzZXMwXQBEAS2IQQK*TU6yv7hxHB3V22sPXQQ_; pt4_token=R2gVTu-k9Su3fNdoo4lMpQ__
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+#http请求正文,不要使用url编码
+#hash值的编码方式见src/webqq/wq_crypto.c,用到了uin和ptwebqq
+r={"h":"hello","hash":"BFB87010","vfwebqq":"dd86a05fb633ea5e3a1a7f27b3c1dd0022d99b7edbae8e73e66dbd673a9bc9319190a680426404d8"}
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 22 Sep 2013 01:08:41 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 5073
+Connection: keep-alive
+#http响应正文
+#其中的uin不同于qq号,但与qq号唯一对应,应该是处于安全考虑
+#其中friends,info和vipinfo三个数组的长度是一致的
+#marknames的长度小于等于friends,因为有些好友没有备注
+#categories的长度与好友没有关系,它是分组的个数
+{"retcode":0,"result":{"friends":[{"flag":12,"uin":785036573,"categories":3},{"flag":8,"uin":1351548266,"categories":2},{"flag":24,"uin":3026744029,"categories":6},{"flag":8,"uin":9224633,"categories":2},{"flag":8,"uin":3978407304,"categories":2},{"flag":24,"uin":97408151,"categories":6},{"flag":8,"uin":3163147521,"categories":2},{"flag":4,"uin":1298913957,"categories":1},{"flag":24,"uin":1884665869,"categories":6},{"flag":4,"uin":1469672887,"categories":1},{"flag":16,"uin":4167039892,"categories":4},{"flag":8,"uin":3200875854,"categories":2},{"flag":24,"uin":2525014410,"categories":6},{"flag":12,"uin":916767067,"categories":3},{"flag":24,"uin":2939944883,"categories":6},{"flag":24,"uin":1790372086,"categories":6},{"flag":4,"uin":3413688988,"categories":1},{"flag":4,"uin":902048474,"categories":1},{"flag":4,"uin":3998966857,"categories":1},{"flag":24,"uin":450505774,"categories":6},{"flag":8,"uin":1394628153,"categories":2},{"flag":4,"uin":68567650,"categories":1},{"flag":24,"uin":1359808563,"categories":6},{"flag":12,"uin":3142008115,"categories":3}],"marknames":[{"uin":785036573,"markname":"王帅","type":0},{"uin":1351548266,"markname":"大哥","type":0},{"uin":3026744029,"markname":"曹焕","type":0},{"uin":9224633,"markname":"李洁","type":0},{"uin":3978407304,"markname":"毛瑜","type":0},{"uin":97408151,"markname":"成泽宇","type":0},{"uin":3163147521,"markname":"姐","type":0},{"uin":1298913957,"markname":"胡志杭","type":0},{"uin":1884665869,"markname":"杨同","type":0},{"uin":1469672887,"markname":"胡云斌","type":0},{"uin":3200875854,"markname":"彻子","type":0},{"uin":2525014410,"markname":"陈方移","type":0},{"uin":916767067,"markname":"吕俊涛","type":0},{"uin":2939944883,"markname":"柯和威","type":0},{"uin":1790372086,"markname":"徐俊","type":0},{"uin":3413688988,"markname":"朱艳静","type":0},{"uin":902048474,"markname":"胡佩佩","type":0},{"uin":3998966857,"markname":"胡晓琛","type":0},{"uin":450505774,"markname":"王也夫","type":0},{"uin":1394628153,"markname":"溜溜","type":0},{"uin":68567650,"markname":"裘依玲","type":0},{"uin":1359808563,"markname":"周田涛","type":0},{"uin":3142008115,"markname":"吕伟盈","type":0}],"categories":[{"index":0,"sort":1,"name":"friends"},{"index":1,"sort":3,"name":"middle school"},{"index":2,"sort":2,"name":"0000000"},{"index":3,"sort":5,"name":"senior high school"},{"index":4,"sort":6,"name":"someone"},{"index":6,"sort":4,"name":"shanghai university"}],"vipinfo":[{"vip_level":0,"u":785036573,"is_vip":0},{"vip_level":6,"u":1351548266,"is_vip":1},{"vip_level":0,"u":3026744029,"is_vip":0},{"vip_level":0,"u":9224633,"is_vip":0},{"vip_level":0,"u":3978407304,"is_vip":0},{"vip_level":0,"u":97408151,"is_vip":0},{"vip_level":0,"u":3163147521,"is_vip":0},{"vip_level":0,"u":1298913957,"is_vip":0},{"vip_level":0,"u":1884665869,"is_vip":0},{"vip_level":0,"u":1469672887,"is_vip":0},{"vip_level":0,"u":4167039892,"is_vip":0},{"vip_level":0,"u":3200875854,"is_vip":0},{"vip_level":0,"u":2525014410,"is_vip":0},{"vip_level":0,"u":916767067,"is_vip":0},{"vip_level":0,"u":2939944883,"is_vip":0},{"vip_level":0,"u":1790372086,"is_vip":0},{"vip_level":0,"u":3413688988,"is_vip":0},{"vip_level":0,"u":902048474,"is_vip":0},{"vip_level":0,"u":3998966857,"is_vip":0},{"vip_level":0,"u":450505774,"is_vip":0},{"vip_level":0,"u":1394628153,"is_vip":0},{"vip_level":0,"u":68567650,"is_vip":0},{"vip_level":0,"u":1359808563,"is_vip":0},{"vip_level":0,"u":3142008115,"is_vip":0}],"info":[{"face":525,"flag":8913410,"nick":"永不放弃","uin":785036573},{"face":522,"flag":289964614,"nick":"天缘包装","uin":1351548266},{"face":273,"flag":4194818,"nick":"皮皮鼠","uin":3026744029},{"face":600,"flag":8913472,"nick":"    正在输入","uin":9224633},{"face":0,"flag":8913474,"nick":"Zz...","uin":3978407304},{"face":297,"flag":285737474,"nick":"CP-three","uin":97408151},{"face":288,"flag":13107714,"nick":"唯一","uin":3163147521},{"face":0,"flag":4719170,"nick":"好久不見.Yi","uin":1298913957},{"face":0,"flag":285737538,"nick":"-ytoon","uin":1884665869},{"face":537,"flag":8913408,"nick":"¾夜未央· 带盐","uin":1469672887},{"face":0,"flag":4719170,"nick":"                 楠楠 孔","uin":4167039892},{"face":294,"flag":8388608,"nick":"呵 呵","uin":3200875854},{"face":291,"flag":12583488,"nick":"伊伽罹夜·エインス","uin":2525014410},{"face":678,"flag":8389120,"nick":"逆ポ天行","uin":916767067},{"face":0,"flag":298320450,"nick":"Zwei","uin":2939944883},{"face":252,"flag":524800,"nick":"/若换你？","uin":1790372086},{"face":336,"flag":21496322,"nick":"嘟嘟`小妞","uin":3413688988},{"face":543,"flag":4719104,"nick":"pp","uin":902048474},{"face":0,"flag":21529088,"nick":"我是琛琛琛","uin":3998966857},{"face":339,"flag":512,"nick":"忧伤还是快乐","uin":450505774},{"face":474,"flag":8913408,"nick":"溜溜","uin":1394628153},{"face":591,"flag":8913408,"nick":"琴秋","uin":68567650},{"face":567,"flag":8389120,"nick":"走过","uin":1359808563},{"face":543,"flag":8913408,"nick":"局","uin":3142008115}]}}
+

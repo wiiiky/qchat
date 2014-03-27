@@ -1,0 +1,69 @@
+#=============================================================================
+#     FileName: login
+#         Desc: 向服务器发起登录请求(完成后还没有真正登录,后续还需要设置在线状态)
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-18 15:59:56
+#      History:
+#=============================================================================
+#
+
+#目标服务器 
+https://ssl.ptlogin2.qq.com
+
+#http请求头
+#u 用户帐号
+#p 加密形式的用户密码,密文受获取验证码时的uin以及验证码以及密码明文相关,详见src/crypto/login.c
+#verfifycode 验证码
+#Cookie中ptvfsession是必须的,在获取验证码时同时获取
+#其他参数使用固定值,有些甚至可以省略 TODO
+GET /login?u=570722992&p=7719D0664A23C63270184A0CF79245D3&verifycode=!EDZ&webqq_type=10&remember_uin=1&login2qq=1&aid=1003903&u1=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&h=1&ptredirect=0&ptlang=2052&daid=164&from_ui=1&pttype=1&dumy=&fp=loginerroralert&action=1-17-14483&mibao_css=m_webqq&t=1&g=1&js_type=0&js_ver=10045&login_sig=Zqzz4xYAdTjlO2Mc1wlcLQjDmxKgFA16b1oknNlAhHIWh*pUizvfK3g7*JNaRIYg HTTP/1.1
+Host: ssl.ptlogin2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:23.0) Gecko/20100101 Firefox/23.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: https://ui.ptlogin2.qq.com/cgi-bin/login?daid=164&target=self&style=5&mibao_css=m_webqq&appid=1003903&enable_qlogin=0&no_verifyimg=1&s_url=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html&f_url=loginerroralert&strong_login=1&login_state=10&t=20130903001
+Cookie: pgv_pvid=3543472480; pgv_info=pgvReferrer=&ssid=s2298476732; uikey=a2ef513f7eaddcb57a9dbf22a15baf5ef40e7cbd1b914bdb6954475aa9f37266; chkuin=570722992; confirmuin=570722992; ptvfsession=84c34e97246becb2625780d00fe92a969d65644b7680971efdb259b4f6eea3fdd893e98ce2f577d3f06da50423cab199; ptisp=edu
+
+#http响应头
+#TODO
+HTTP/1.1 200 OK
+Server: nginx/1.2.7
+Date: Sun, 15 Sep 2013 07:29:02 GMT
+Content-Type: application/x-javascript; charset=utf-8
+Transfer-Encoding: chunked
+P3P: CP="CAO PSA OUR"
+Set-Cookie: pt2gguin=o0570722992; EXPIRES=Fri, 02-Jan-2020 00:00:00 GMT; PATH=/; DOMAIN=qq.com;
+Set-Cookie: uin=o0570722992; PATH=/; DOMAIN=qq.com;
+Set-Cookie: skey=@K1UixRUz7; PATH=/; DOMAIN=qq.com;
+Set-Cookie: ETK=; PATH=/; DOMAIN=ptlogin2.qq.com;
+Set-Cookie: superuin=o0570722992; PATH=/; DOMAIN=ptlogin2.qq.com;
+Set-Cookie: superkey=yR7JmsLWU7aZKoVWFuvTw6RpbiEYLnfdixyynXseda4_; PATH=/; DOMAIN=ptlogin2.qq.com; HttpOnly
+Set-Cookie: supertoken=4262055495; PATH=/; DOMAIN=ptlogin2.qq.com;
+Set-Cookie: ptisp=edu; PATH=/; DOMAIN=qq.com;
+Set-Cookie: RK=9Dqa9dv6vs; EXPIRES=Wed, 13-Sep-2023 07:29:02 GMT; PATH=/; DOMAIN=qq.com;
+Set-Cookie: ptuserinfo=57696b79; PATH=/; DOMAIN=ptlogin2.qq.com;
+Set-Cookie: ptcz=164b78eb4b703b0a5edd250ae2de686fd33f140efc9f078c0f28866fa48950f5; EXPIRES=Fri, 02-Jan-2020 00:00:00 GMT; PATH=/; DOMAIN=qq.com;
+Set-Cookie: ptcz=; EXPIRES=Fri, 02-Jan-1970 00:00:00 GMT; PATH=/; DOMAIN=ptlogin2.qq.com;
+Set-Cookie: airkey=; EXPIRES=Fri, 02-Jan-1970 00:00:00 GMT; PATH=/; DOMAIN=qq.com;
+Set-Cookie: ptwebqq=9cf94f564671b69c16ee7d12b3967e0874a653c42c6b5708d8b98b347862557b; PATH=/; DOMAIN=qq.com;
+Pragma: no-cache
+Cache-Control: no-cache; must-revalidate
+
+#http响应正文
+#登录成功
+ptuiCB('0','0','http://ptlogin4.web2.qq.com/check_sig?pttype=1&uin=570722992&service=login&nodirect=0&ptsig=7eo*RVMx-lTJZUlptOMdlfb-STgI0hTUsql3fOh6lfM_&s_url=http%3A%2F%2Fweb2.qq.com%2Floginproxy.html%3Flogin2qq%3D1%26webqq_type%3D10&f_url=&ptlang=2052&ptredirect=100&aid=1003903&daid=164&j_later=0&low_login_hour=0&regmaster=0','0','登录成功！', 'Wiky');
+#登录失败,密码错误
+ptuiCB('3','0','','0','您输入的帐号或密码不正确，请重新输入。', '570722992');
+#登录失败,验证码错误
+ptuiCB('4','0','','0','您输入的验证码不正确，请重新输入。', '570722992');
+
+
+#注意上面返回了状态0(成功后)登录还没有结束
+#这时我们还需要对返回的url进行一次GET(一次简单的GET)
+#这次请求的目的是获取必要的cookie,否则后续将无法登录
+#因为只是一次很简单的GET请求,因此不再赘述

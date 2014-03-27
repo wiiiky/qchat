@@ -1,0 +1,43 @@
+#=============================================================================
+#     FileName: get_friend_info
+#         Desc: 获取好友信息
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-20 13:53:17
+#      History:
+#=============================================================================
+#
+
+#目标服务器
+http://s.web2.qq.com
+
+#http请求头
+#uin不是qq号,它是一个与qq号唯一对应的值(处于安全考虑),
+#可以是自己,获取自己信息也使用这条协议,对于自己来说uin等于qq号
+#vfwebqq是随webqq登录一直存在的那个vfwebqq
+#t是从1970.1.1到现在的秒数
+GET /api/get_friend_info2?tuin=570722992&verifysession=&code=&vfwebqq=74e6f7c45cd1d7543b4c8bcb8c465daca2446a32ca8b3130bb9ae2372a6e608387b5a6f0c09d2fe8&t=1379116473334 HTTP/1.1
+Host: s.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:23.0) Gecko/20100101 Firefox/23.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: utf-8
+Cookie: pt2gguin=o0570722992; RK=9Dqa9dv6vs; ptcz=0a84a2a0b985c10d1c618baf7048c75dc95e64958aa670f4546fed642e75f0a4; pgv_pvid=5251098076; ptui_loginuin=570722992; pgv_info=pgvReferrer=&ssid=s1873747106; ptisp=edu; ptwebqq=89cdfee6bf17e99a90e8c6df8f6aaa33112437de4244f184c5b3bbf148dcac4b; uin=o0570722992; skey=@62osgUuXg; p_uin=o0570722992; p_skey=OYj80DD3Cu-vOivYu-73Ya-nST3fjVr*93TFiOYs-po_; pt4_token=e14uXaXTjBGHFBYz6gASdw__
+Referer: http://s.web2.qq.com/proxy.html?v=20110412001&callback=1&id=1
+Connection: Close     
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 14 Sep 2013 02:11:25 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 511
+Connection: close
+
+#http响应正文
+#TODO
+{"retcode":0,"result":{"face":522,"birthday":{"month":6,"year":1992,"day":11},"occupation":"本科生","phone":"18801912405","allow":1,"college":"shanghai university","uin":570722992,"constel":5,"blood":5,"homepage":"http://www.fsf.org","stat":10,"vip_info":0,"country":"中国","city":"宝山","personal":"Unix is user-friendly, it\u0027s just choosy about who its friends are.","nick":"Wiky","shengxiao":9,"email":"wiiiky@yahoo.cn","client_type":41,"province":"上海","gender":"male","mobile":"188********"}}

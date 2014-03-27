@@ -1,0 +1,49 @@
+#=============================================================================
+#     FileName: send_friend_msg
+#         Desc: 给好友发送消息
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-23 15:23:06
+#      History:
+#=============================================================================*/
+
+
+#目标服务器
+http://d.web2.qq.com
+
+#http请求头
+POST /channel/send_buddy_msg2 HTTP/1.1
+Host: d.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: https://d.web2.qq.com/cfproxy.html?v=20110331002&callback=1
+Content-Length: 892
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=pDra5dv6tM; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; pgv_info=pgvReferrer=&ssid=s8321207718; ptisp=edu; uin=o0570722992; skey=@R6f4Q3mcb; p_uin=o0570722992; p_skey=MmvtQPucJ*W5MSqrKced3yO4wTv7EIsbFn4wfjCiLLU_; pt4_token=hrYtH-V-CgvKWGgs0r1Uag__; ptwebqq=fc9947b69b5761a1e7268eca7b47efe1d4c00a1826fb7cb6084fa86d5f7cab51
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+#http请求正文
+#to 好友uin
+#face FIXME
+#content 消息正文以及字体颜色等属性
+#msg_id 消息id，貌似可以是个固定值
+#clientid和psessionid就不用多说了
+r={"to":1754378366,"face":522,"content":"[\"丑男\",\"\",[\"font\",{\"name\":\"幼圆\",\"size\":\"11\",\"style\":[0,0,0],\"color\":\"000000\"}]]","msg_id":93620001,"clientid":"63362283","psessionid":"8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e323032000003c800000d36036e0400b08a04226d0000000a405236663451336d63626d0000002803caec33561cfad2d1fef30028a103d85cd1cb827d345f9b7c1c76e8590832786e38fabb97229b01"}&clientid=63362283&psessionid=8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e323032000003c800000d36036e0400b08a04226d0000000a405236663451336d63626d0000002803caec33561cfad2d1fef30028a103d85cd1cb827d345f9b7c1c76e8590832786e38fabb97229b01
+
+
+#http响应头
+HTTP/1.1: 200 OK
+Server: nginx
+Date: Wed, 25 Sep 2013 00:48:37 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Content-Length: 29
+Cache-Control: no-cache
+#http响应正文
+{"retcode":0,"result":"ok"}

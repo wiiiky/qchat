@@ -1,0 +1,46 @@
+#=============================================================================
+#     FileName: get_groups_list
+#         Desc: 获取群列表
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-09-28 10:54:58
+#      History:
+#=============================================================================*/
+
+#目标服务器
+http://s.web2.qq.com
+
+#http请求头
+POST /api/get_group_name_list_mask2 HTTP/1.1
+Host: s.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://s.web2.qq.com/proxy.html?v=20110412001&callback=1&id=1
+Content-Length: 110
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=pDra5dv6tM; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; o_cookie=2037369293; verifysession=h02uxogEalC-Nmv3q9PS5WsVgIBiVDCNI4SYrr4oVFVzD3p5VI7wqHp5fay_S1O_Xiim1pvYJrIGbXGtQGzJ2kTAg**; pgv_info=pgvReferrer=&ssid=s5739380528; ptisp=edu; uin=o0570722992; skey=@NimpwvuFi; p_uin=o0570722992; p_skey=5O-OmTxCEBO-5ZBeL0eSZCFjCLz-cN6VPxQb3kbpyWg_; pt4_token=qJ5eogYmm*0KOSSIi1Aexw__; ptwebqq=98beafbaeb2c90f3c18669f70e07cbd13d49a0800ce97b59d83d0b270341d864
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+
+#http请求正文(POST数据)
+#vfwebqq你懂的
+r={"vfwebqq":"e6a4c15fdcc9896dd214b235acd9cb47616b697e835f806af2366bb6535c825f4d829926795e9b69"}
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 28 Sep 2013 02:53:23 GMT
+Content-Type: application/json;charset=utf-8
+Content-Length: 672
+Connection: keep-alive
+#http响应正文
+#masklist表示群消息屏蔽,0表示正常,1表示接收不提示,2表示完全屏蔽
+#namelist就是群的一些信息
+#marklist是群备注
+{"retcode":0,"result":{"gmasklist":[{"gid":1000,"mask":0},{"gid":1578481569,"mask":0},{"gid":4214192748,"mask":0},{"gid":916202440,"mask":0},{"gid":2984800352,"mask":0},{"gid":3751777088,"mask":0},{"gid":3233320948,"mask":0}],"gnamelist":[{"flag":1,"name":"10班","gid":916202440,"code":3269917417},{"flag":1090519041,"name":"libwq测试群","gid":199847940,"code":2965674327},{"flag":1090519041,"name":"ubuntukylin开发者群","gid":3751777088,"code":848331162},{"flag":16778241,"name":"永远的、8班","gid":1578481569,"code":3205245855},{"flag":1,"name":"SHU-CES-10级1-5班","gid":4214192748,"code":2987198563}],"gmarklist":[{"uin":916202440,"markname":"高中"}]}}

@@ -1,0 +1,28 @@
+[Anjuta]
+Maximized=1
+Geometry=1301x744+65+24
+
+[File Loader]
+Files=../../src/main.c#1%%%../../src/wqqm4.h#37%%%../../src/wqquilogin.h#1%%%../../src/wqquilogin.c#369%%%../../src/wqquiqqpanel.h#1%%%../../src/wqquiqqpanel.c#1567
+
+[Document Manager]
+bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n
+
+[Project Manager]
+Expand=qchat%%%qchat//src%%%qchat//src//qchat%%%qchat//QCHAT
+
+[Execution]
+Program uri=../../Debug/src/qchat
+Run in terminal=2
+Working directories=../../../qchat
+
+[Build]
+Configuration list=1:Default:%%%1:Debug:Debug%%%1:Profiling:Profiling%%%1:Optimized:Optimized
+Selected Configuration=Debug
+BuildArgs/Default=--enable-maintainer-mode
+BuildArgs/Debug=--enable-maintainer-mode 'CFLAGS=-g -O0' 'CXXFLAGS=-g -O0' 'JFLAGS=-g -O0' 'FFLAGS=-g -O0'
+BuildArgs/Profiling=--enable-maintainer-mode 'CFLAGS=-g -pg' 'CXXFLAGS=-g -pg' 'JFLAGS=-g -pg' 'FFLAGS=-g -pg'
+BuildArgs/Optimized=--enable-maintainer-mode 'CFLAGS=-O2' 'CXXFLAGS=-O2' 'JFLAGS=-O2' 'FFLAGS=-O2'
+
+[Debugger]
+Stop at beginning=2

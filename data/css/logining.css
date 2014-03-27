@@ -1,0 +1,7 @@
+GtkToolItem GtkButton{
+	border-radius : 20px;
+}
+
+GtkToolItem GtkButton GtkLabel {
+	font-size : 15px;
+}

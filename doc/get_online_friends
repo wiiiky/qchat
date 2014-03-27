@@ -1,0 +1,40 @@
+#=============================================================================
+#     FileName: get_online_friends
+#         Desc: 获取在线好友
+#       Author: Wiky L
+#        Email: wiiiky@yeah.net
+#     HomePage: https://launchpad.net/~wiiiky-v
+#      Version: 0.0.1
+#   LastChange: 2013-10-09 13:40:44
+#      History:
+#=============================================================================*/
+
+#目标服务器
+http://d.web2.qq.com
+
+#http请求头
+#clientid和psessionid不需要多说了吧(^^)
+GET /channel/get_online_buddies2?clientid=28132989&psessionid=8368046764001e636f6e6e7365727665725f77656271714031302e3133332e34312e32303200003fd400000ed6036e0400b08a04226d0000000a4079624f385a497155716d00000028e89ab319d0fccd38378993dea6fea207615edff6c9619b4e79dc96c0f18a3c52dbfe1b962938cf90&t=1381297137661 HTTP/1.1
+Host: d.web2.qq.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+DNT: 1
+Content-Type: utf-8
+Referer: https://d.web2.qq.com/cfproxy.html?v=20110331002&callback=1
+Cookie: pgv_pvid=9169576686; ptui_loginuin=570722992; pt2gguin=o0570722992; RK=pDra5dv6tM; ptcz=1464682ee9a30858ec8aab6aa4365d6ab428568c732770298e2d7a8a25fce694; hideusehttpstips=1; usehttps=1; o_cookie=570722992; pgv_pvi=5767573504; pgv_info=pgvReferrer=&ssid=s9361702298; verifysession=h02pbE2qUvH8a-C-qa_bkPByhknwF6WGvfb5Se4Ek4kZw0Chp-qJSv5kNTZ9vVoZeZbOvXLZaurYUtlEILWRKTi_g**; ptisp=edu; uin=o0570722992; skey=@ybO8ZIqUq; pt4_token=WRtfy8W65iqVisIEaEl94g__; p_uin=o0570722992; p_skey=3e93j-TwXRfwyerHsNn7hZ*RGCvB6KwjxyUowME1Mtc_; ptwebqq=8704f4d7fbc13f06bcb1ca26f18ef33218b16298f186972f5173fb5362033cf7
+Connection: keep-alive
+
+#http响应头
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 09 Oct 2013 05:38:59 GMT
+Content-Type: text/plain; charset=utf-8
+Connection: keep-alive
+Content-Length: 551
+Cache-Control: no-cache
+#http响应正文
+#:-)
+{"retcode":0,"result":[{"uin":1575752397,"status":"away","client_type":1},{"uin":2909226559,"status":"online","client_type":24},{"uin":104708909,"status":"online","client_type":1},{"uin":833848763,"status":"online","client_type":1},{"uin":3013829369,"status":"online","client_type":21},{"uin":231449621,"status":"busy","client_type":1},{"uin":2781513622,"status":"online","client_type":24},{"uin":272994350,"status":"online","client_type":21},{"uin":713961688,"status":"online","client_type":1},{"uin":3222798761,"status":"online","client_type":1}]}
+
